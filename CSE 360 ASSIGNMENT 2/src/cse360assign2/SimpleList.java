@@ -1,6 +1,6 @@
 /* Author: Frank Cimino
  * Class ID: 150
- * Assignment 1
+ * Assignment 2 
  * Description: This file contains the implementation for the SimpleList Class
  */
 
@@ -8,6 +8,8 @@ package cse360assign2;
 
 /**
  * This is the implementation of the SimpleList Class
+ * 
+ * 
  * 
  * @author Frank Cimino
  *
