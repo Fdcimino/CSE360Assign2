@@ -56,25 +56,6 @@ public class SimpleListTest {
 		assertEquals("Pass: count went up", s.count(), 10);
 	}
 	
-	/**
-	 * tests adding 11 elements to simpleList
-	 */
-	@Test
-	public void testAddOverMax() {
-		SimpleList s = new SimpleList();
-		s.add(1);
-		s.add(2);
-		s.add(3);
-		s.add(4);
-		s.add(5);
-		s.add(6);
-		s.add(7);
-		s.add(8);
-		s.add(9);
-		s.add(10);
-		s.add(11);
-		assertEquals("Pass: count went up", s.count(), 10);
-	}
 	
 	/**
 	 * tests the remove a element
@@ -193,5 +174,110 @@ public class SimpleListTest {
 		s.remove(11);
 		assertEquals("Pass: string is correct", s.toString(), "13 12 14 11 10 9");
 	}
-
+	
+	@Test
+	public void testAppendSTR() {
+		SimpleList s = new SimpleList();
+		s.append(1);
+		s.append(2);
+		s.append(3);
+		s.append(4);
+		s.append(5);
+		s.append(6);
+		s.append(7);
+		s.append(8);
+		s.append(9);
+		s.append(10);
+		s.append(11);
+		s.append(12);
+		s.append(13);
+		s.append(14);
+		s.append(15);
+		assertEquals("Pass: string is correct", s.toString(), "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15");
+	}
+	
+	@Test
+	public void testSize() {
+		SimpleList s = new SimpleList();
+		s.append(1);
+		s.append(2);
+		s.append(3);
+		s.append(4);
+		s.append(5);
+		s.append(6);
+		s.append(7);
+		s.append(8);
+		s.append(9);
+		s.append(10);
+		s.append(11);
+		s.append(12);
+		s.append(13);
+		s.append(14);
+		s.append(15);
+		assertEquals("Pass: string is correct", s.size(), 15);
+	}
+	
+	@Test
+	public void testfirst() {
+		SimpleList s = new SimpleList();
+		s.append(1);
+		s.append(2);
+		s.append(3);
+		s.append(4);
+		s.append(5);
+		s.append(6);
+		s.append(7);
+		s.append(8);
+		s.append(9);
+		s.append(10);
+		s.append(11);
+		s.append(12);
+		s.append(13);
+		s.append(14);
+		s.append(15);
+		assertEquals("Pass: string is correct", s.first(), 1);
+	}
+	
+	@Test
+	public void testLast() {
+		SimpleList s = new SimpleList();
+		s.append(1);
+		s.append(2);
+		s.append(3);
+		s.append(4);
+		s.append(5);
+		s.append(6);
+		s.append(7);
+		s.append(8);
+		s.append(9);
+		s.append(10);
+		s.append(11);
+		s.append(12);
+		s.append(13);
+		s.append(14);
+		s.append(15);
+		assertEquals("Pass: string is correct", s.last(), 15);
+	}
+	
+	@Test
+	public void testReduceSize() {
+		SimpleList s = new SimpleList();
+		s.append(1);
+		s.append(2);
+		s.append(3);
+		s.remove(3);
+		assertEquals("Pass: string is correct", s.size(), 9);
+	}
+	
+	@Test
+	public void testLastEmpty() {
+		SimpleList s = new SimpleList();
+		assertEquals("Pass: string is correct", s.last(), -1);
+	}
+	
+	@Test
+	public void testfirstEmpty() {
+		SimpleList s = new SimpleList();
+		assertEquals("Pass: string is correct", s.first(), -1);
+	}
 }

@@ -70,11 +70,18 @@ public class SimpleList {
 	public void remove(int numberToRemove) {
 		int removeIndex = -1;
 		
+		boolean found = false;
+		
 		for(int oldIndexFinder = 0; oldIndexFinder < count; oldIndexFinder++) {
 			if(list[oldIndexFinder] == numberToRemove) {
 				removeIndex = oldIndexFinder;
 				oldIndexFinder = count + 1;
+				found = true;
 			}
+		}
+		
+		if(!found) {
+			return;
 		}
 		
 		int end = count - 1;
