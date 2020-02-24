@@ -35,8 +35,8 @@ public class SimpleList {
 	public void add(int newNumber) {
 		//if the count is 10 start the moving at 9 to avoid overflow error
 		int start = count;
-		if(count == 10) {
-			start = 9;
+		if(count == list.length) {
+			increaseSizeby50p();
 		}
 		
 		//moves all elements down one
@@ -47,12 +47,21 @@ public class SimpleList {
 		list[0] = newNumber; 
 		
 		//increments count since we added an element 
-		//but only if size is not 10 already
-		if(count != 10) {
-			count++; 
-		}
+		count++; 
 		
 	}
+	
+	/**
+	 * Increases the size of the list by 50 percent
+	 */
+	private void increaseSizeby50p() {
+		int[] temp = list;
+		list = new int[(int)(temp.length * 1.5)];
+		
+		for(int listMover = 0; listMover < temp.length; listMover++)
+			list[listMover] = temp[listMover];
+	}
+
 	/**
 	 * removes the element from the list
 	 * <p>
@@ -74,8 +83,24 @@ public class SimpleList {
 			list[shiftDown] = list[shiftDown + 1];
 		}
 		count--;
+		if(count < ((int)(list.length * .75)) ){
+			decreaseSizeOfListByOne();
+		}
 	}
 	
+	
+
+	/**
+	 * Decreases the size of the list by 1
+	 */
+	private void decreaseSizeOfListByOne() {
+		int[] temp = list;
+		list = new int[temp.length - 1];
+		
+		for(int listMover = 0; listMover < count; listMover++)
+			list[listMover] = temp[listMover];
+	}
+
 	/**
 	 * returns the number of elements in the list
 	 * @return count
