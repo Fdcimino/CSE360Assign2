@@ -142,4 +142,50 @@ public class SimpleList {
 		}
 		return toReturn;
 	}
+	
+	// START OF THE SECOND VERSION OF THE LIST
+	
+	/**
+	 * Adds an element to the end of the list
+	 * @param toADD
+	 */
+	public void append(int toADD) {
+		if(count == list.length) {
+			increaseSizeby50p();
+		}
+		list[count] = toADD;
+		count++;
+	}
+	
+	/**
+	 * Returns the first element of the list
+	 * @return
+	 */
+	public int first() {
+		if(count == 0) {
+			return -1;
+		}else {
+			return list[0];
+		}
+	}
+	
+	/**
+	 * Returns the first element of the list
+	 * @return
+	 */
+	public int last() {
+		if(count == 0) {
+			return -1;
+		}else {
+			return list[count-1];
+		}
+	}
+	
+	/**
+	 * returns the size of the list
+	 * @return
+	 */
+	public int size(){
+		return list.length;
+	}
 }
